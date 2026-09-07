@@ -1,0 +1,7 @@
+The Core Rules of Angular API CallsKeep UI Thin, Services Heavy: Components never call APIs directly. The Component simply asks the Service for data and translates the result into a local signal.
+ [1](https://nareshit.com/blogs/api-integration-in-angular-17-guide), [2] (https://www.youtube.com/watch?v=yMkUuMPUzs0&t=149)
+
+Convert Streams to State: Angular's HttpClient relies on RxJS Observables. To remain in the 80/20 zone, quickly bridge the asynchronous stream over into a regular synchronous signal inside the .subscribe() wrapper block.
+ [1] (https://www.youtube.com/watch?v=FTEo---NobQ), [2] (https://nareshit.com/blogs/api-integration-in-angular-17-guide), [3] (https://www.youtube.com/watch?v=yMkUuMPUzs0&t=149)
+
+Always Register the Provider: If you forget to specify provideHttpClient() in the root setup configuration, your app will trigger a terminal NullInjectorError crash.
